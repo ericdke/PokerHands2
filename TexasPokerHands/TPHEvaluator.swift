@@ -12,7 +12,7 @@ public class TPHEvaluator {
     let byteRanks: TPHByteRanks
     let deck = TPHCardsDeck()
     
-    init?() {
+    public init?() {
         if let br = TPHByteRanks() {
             byteRanks = br
         } else {
@@ -20,7 +20,7 @@ public class TPHEvaluator {
         }
     }
     
-    func evaluate(cards: [String]) -> TPHHandRank {
+    public func evaluate(cards: [String]) -> TPHHandRank {
         let cardValues = cards.map { self.deck.as_binary($0) }
 
         let handIndex = cardValues.reduce(0,|) >> 16

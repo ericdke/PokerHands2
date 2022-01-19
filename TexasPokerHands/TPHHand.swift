@@ -9,7 +9,9 @@ import Foundation
 
 public struct TPHHand {
     
-    let rank: TPHHandRank
-    let cards: [String]
+    // Use TPHPlayer to use and see hands.
+    
+    public let rank: TPHHandRank
+    public let cards: [String]
     
 }

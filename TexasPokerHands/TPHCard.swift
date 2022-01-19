@@ -9,19 +9,21 @@ import Foundation
 
 public struct TPHCard: Equatable {
 
-    let suit: String
+    // Use TPHDealer to manipulate cards.
+    
+    public let suit: String
 
-    let rank: String
+    public let rank: String
 
-    let description: String
+    public let description: String
 
-    init(suit: String, rank: String) {
+    public init(suit: String, rank: String) {
         self.suit = suit
         self.rank = rank
         self.description = "\(rank)\(suit)"
     }
 
-    var name: String {
+    public var name: String {
         get {
             let s:String
             switch suit {

@@ -7,13 +7,13 @@
 
 import Foundation
 
-class TPHConstants {
+public class TPHConstants {
     
-    static let suits = ["♠","♣","♥","♦"]
+    public static let suits = ["♠","♣","♥","♦"]
     
-    static let ranks = ["A","K","Q","J","T","9","8","7","6","5","4","3","2"]
+    public static let ranks = ["A","K","Q","J","T","9","8","7","6","5","4","3","2"]
     
-    enum RankName: String {
+    public enum RankName: String {
         case highCard = "High Card"
         case onePair = "One Pair"
         case twoPairs = "Two Pairs"

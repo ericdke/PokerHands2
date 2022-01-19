@@ -5,18 +5,17 @@
 //  Created by Eric Dejonckheere on 19/01/2022.
 //
 
-import Foundation
 import Algorithms
 
 public class TPHDealer {
 
     var evaluator: TPHEvaluator
 
-    var currentDeck: TPHModelDeck
+    public var currentDeck: TPHModelDeck
 
     public var table: TPHTable
 
-    var verbose = false
+    public var verbose = false
 
     public init?() {
         currentDeck = TPHModelDeck()
@@ -50,13 +49,13 @@ public class TPHDealer {
         self.evaluator = evaluator
     }
 
-    var currentGame: String { return table.currentGame }
+    public var currentGame: String { return table.currentGame }
 
-    var flop: String { return table.flop }
+    public var flop: String { return table.flop }
 
-    var turn: String { return table.turn }
+    public var turn: String { return table.turn }
 
-    var river: String { return table.river }
+    public var river: String { return table.river }
 
     public var currentHandWinner: TPHPlayer? {
         didSet {
@@ -74,19 +73,19 @@ public class TPHDealer {
 
     var scores = [UUID: Int]()
 
-    func changeDeck() {
+    public func changeDeck() {
         currentDeck = TPHModelDeck()
     }
 
-    func shuffleDeck() {
+    public func shuffleDeck() {
         currentDeck.shuffle()
     }
     
-    func removeCards(from player: TPHPlayer) {
+    public func removeCards(from player: TPHPlayer) {
         player.cards = []
     }
 
-    func deal(number: Int) -> [TPHCard] {
+    public func deal(number: Int) -> [TPHCard] {
         return currentDeck.takeCards(number: number)
     }
 
@@ -98,7 +97,7 @@ public class TPHDealer {
         player.cards = dealHand()
     }
     
-    func deal(cards: [String]) -> [TPHCard] {
+    public func deal(cards: [String]) -> [TPHCard] {
         let upCardChars = cards.map({$0.uppercased().map({String($0)})})
         var cardsToDeal = [TPHCard]()
         for cardChars in upCardChars {
@@ -113,11 +112,11 @@ public class TPHDealer {
         return cardsToDeal
     }
     
-    func deal(cards: [String], to player: TPHPlayer) {
+    public func deal(cards: [String], to player: TPHPlayer) {
         player.cards = deal(cards: cards)
     }
     
-    func deal(cards: [TPHCard], to player: TPHPlayer) {
+    public func deal(cards: [TPHCard], to player: TPHPlayer) {
         var cardsToDeal = [TPHCard]()
         for card in cards {
             guard let indexToRemove = currentDeck.cards.firstIndex(of: card) else {
@@ -148,11 +147,11 @@ public class TPHDealer {
         return dealTurn()
     }
 
-    func burn() -> TPHCard? {
+    public func burn() -> TPHCard? {
         return currentDeck.takeCards(number: 1).first
     }
 
-    func dealWithBurning(number: Int) -> [TPHCard] {
+    public func dealWithBurning(number: Int) -> [TPHCard] {
         guard let burned = burn() else {
             return []
         }

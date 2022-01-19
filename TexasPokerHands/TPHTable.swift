@@ -9,9 +9,9 @@ import Foundation
 
 public class TPHTable {
     
-    var dealtCards = [TPHCard]()
+    public var dealtCards = [TPHCard]()
 
-    var burnt = [TPHCard]()
+    public var burnt = [TPHCard]()
 
     public var currentGame: String {
         return dealtCards.spacedDescriptions

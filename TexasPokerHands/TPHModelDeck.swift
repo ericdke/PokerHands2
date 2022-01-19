@@ -9,11 +9,13 @@ import Foundation
 
 public class TPHModelDeck {
     
-    var cards = [TPHCard]()
+    // Use TPHDealer to manipulate the deck.
     
-    let capacity = 52
+    public var cards = [TPHCard]()
     
-    init() {
+    public var capacity = 52
+    
+    public init() {
         for thisSuit in TPHConstants.suits {
             for thisRank in TPHConstants.ranks {
                 cards.append(
@@ -23,11 +25,11 @@ public class TPHModelDeck {
         }
     }
     
-    func shuffle() {
+    public func shuffle() {
         cards.shuffle()
     }
     
-    func takeCards(number: Int) -> [TPHCard] {
+    public func takeCards(number: Int) -> [TPHCard] {
         guard self.count >= number else {
             return []
         }
@@ -40,11 +42,11 @@ public class TPHModelDeck {
         return c
     }
     
-    var count: Int {
+    public var count: Int {
         return cards.count
     }
     
-    var dealt: Int {
+    public var dealt: Int {
         return capacity - cards.count
     }
     

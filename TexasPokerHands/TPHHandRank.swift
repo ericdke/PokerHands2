@@ -9,10 +9,10 @@ import Foundation
 
 public class TPHHandRank: Equatable {
     
-    let rank: Int
-    let name: TPHConstants.RankName
+    public let rank: Int
+    public let name: TPHConstants.RankName
     
-    init(rank:Int) {
+    public init(rank:Int) {
         self.rank = rank
         let start = Array(TPHConstants.rankStarts.keys.filter {$0 >= rank}).sorted { $0 < $1 }.first!
         self.name = TPHConstants.rankStarts[start]!

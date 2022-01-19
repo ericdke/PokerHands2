@@ -9,7 +9,7 @@ import Foundation
 
 class TPHCardsDeck {
     
-    var cards: [String:Int]
+    var cards: [String: Int]
     
     var count: Int { return cards.count }
     

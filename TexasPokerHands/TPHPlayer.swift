@@ -9,34 +9,34 @@ import Foundation
 
 public class TPHPlayer {
     
-    let id = UUID()
+    public let id = UUID()
 
     public init(name: String? = nil) {
         self.name = name ?? ""
     }
     
-    var name: String?
+    public var name: String?
 
-    var historyOfDealtCards = [TPHPocketCard]()
+    public var historyOfDealtCards = [TPHPocketCard]()
     
-    var frequentHands = [String:Int]()
+    public var frequentHands = [String:Int]()
 
-    var hand: TPHHand?
+    public var hand: TPHHand?
     
-    var handDescription: String? {
+    public var handDescription: String? {
         return hand?.cards.joined(separator: " ")
     }
     
-    var handNameDescription: String? {
+    public var handNameDescription: String? {
         return hand?.rank.name.rawValue.lowercased()
     }
 
-    var cardsHistory: String {
+    public var cardsHistory: String {
         let mapped = historyOfDealtCards.map { $0.card1.description + " " + $0.card2.description }
         return mapped.joined(separator: ", ")
     }
 
-    var cards = [TPHCard]() {
+    public var cards = [TPHCard]() {
         didSet {
             let tu = TPHPocketCard(card1: cards[0], card2: cards[1], date: Date())
             historyOfDealtCards.append(tu)
@@ -49,15 +49,15 @@ public class TPHPlayer {
         }
     }
 
-    var cardsNames: String {
+    public var cardsNames: String {
         return cards.joinNames(with: ", ")
     }
 
-    var count: Int {
+    public var count: Int {
         return cards.count
     }
 
-    var holeCards: String {
+    public var holeCards: String {
         return cards.spacedDescriptions
     }
     
@@ -68,7 +68,7 @@ public class TPHPlayer {
         return formatter.string(from: date)
     }
     
-    var lastDealtHandDate: Date? {
+    public var lastDealtHandDate: Date? {
         return historyOfDealtCards.last?.date
     }
     

@@ -9,8 +9,8 @@ import Foundation
 
 public struct TPHPocketCard {
     
-    let card1: TPHCard
-    let card2: TPHCard
-    let date: Date
+    public let card1: TPHCard
+    public let card2: TPHCard
+    public let date: Date
     
 }
