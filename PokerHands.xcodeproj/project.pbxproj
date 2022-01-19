@@ -14,7 +14,35 @@
 		640A63B127986D2A00B343A0 /* SPHMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640A63B027986D2A00B343A0 /* SPHMainViewController.swift */; };
 		640A63B427986D2A00B343A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 640A63B227986D2A00B343A0 /* LaunchScreen.storyboard */; };
 		640A63BC27986F0A00B343A0 /* SPHMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640A63BB27986F0A00B343A0 /* SPHMainView.swift */; };
+		640A63C52798713E00B343A0 /* TexasPokerHands.h in Headers */ = {isa = PBXBuildFile; fileRef = 640A63C42798713E00B343A0 /* TexasPokerHands.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		640A63C82798713E00B343A0 /* TexasPokerHands.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 640A63C22798713D00B343A0 /* TexasPokerHands.framework */; };
+		640A63C92798713E00B343A0 /* TexasPokerHands.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 640A63C22798713D00B343A0 /* TexasPokerHands.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		640A63CF2798718900B343A0 /* TPHDealer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640A63CE2798718900B343A0 /* TPHDealer.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		640A63C62798713E00B343A0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 640A639A27986D2A00B343A0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 640A63C12798713D00B343A0;
+			remoteInfo = TexasPokerHands;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		640A63CD2798713E00B343A0 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				640A63C92798713E00B343A0 /* TexasPokerHands.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		640A63A227986D2A00B343A0 /* PokerHands.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokerHands.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -26,10 +54,21 @@
 		640A63B327986D2A00B343A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		640A63B527986D2A00B343A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		640A63BB27986F0A00B343A0 /* SPHMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPHMainView.swift; sourceTree = "<group>"; };
+		640A63C22798713D00B343A0 /* TexasPokerHands.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TexasPokerHands.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		640A63C42798713E00B343A0 /* TexasPokerHands.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TexasPokerHands.h; sourceTree = "<group>"; };
+		640A63CE2798718900B343A0 /* TPHDealer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPHDealer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		640A639F27986D2A00B343A0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				640A63C82798713E00B343A0 /* TexasPokerHands.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		640A63BF2798713D00B343A0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -43,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				640A63A427986D2A00B343A0 /* PokerHands */,
+				640A63C32798713E00B343A0 /* TexasPokerHands */,
 				640A63A327986D2A00B343A0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -51,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				640A63A227986D2A00B343A0 /* PokerHands.app */,
+				640A63C22798713D00B343A0 /* TexasPokerHands.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -94,7 +135,27 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		640A63C32798713E00B343A0 /* TexasPokerHands */ = {
+			isa = PBXGroup;
+			children = (
+				640A63C42798713E00B343A0 /* TexasPokerHands.h */,
+				640A63CE2798718900B343A0 /* TPHDealer.swift */,
+			);
+			path = TexasPokerHands;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		640A63BD2798713D00B343A0 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				640A63C52798713E00B343A0 /* TexasPokerHands.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		640A63A127986D2A00B343A0 /* PokerHands */ = {
@@ -104,15 +165,35 @@
 				640A639E27986D2A00B343A0 /* Sources */,
 				640A639F27986D2A00B343A0 /* Frameworks */,
 				640A63A027986D2A00B343A0 /* Resources */,
+				640A63CD2798713E00B343A0 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				640A63C72798713E00B343A0 /* PBXTargetDependency */,
 			);
 			name = PokerHands;
 			productName = PokerHands;
 			productReference = 640A63A227986D2A00B343A0 /* PokerHands.app */;
 			productType = "com.apple.product-type.application";
+		};
+		640A63C12798713D00B343A0 /* TexasPokerHands */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 640A63CA2798713E00B343A0 /* Build configuration list for PBXNativeTarget "TexasPokerHands" */;
+			buildPhases = (
+				640A63BD2798713D00B343A0 /* Headers */,
+				640A63BE2798713D00B343A0 /* Sources */,
+				640A63BF2798713D00B343A0 /* Frameworks */,
+				640A63C02798713D00B343A0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TexasPokerHands;
+			productName = TexasPokerHands;
+			productReference = 640A63C22798713D00B343A0 /* TexasPokerHands.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -127,6 +208,10 @@
 				TargetAttributes = {
 					640A63A127986D2A00B343A0 = {
 						CreatedOnToolsVersion = 13.0;
+					};
+					640A63C12798713D00B343A0 = {
+						CreatedOnToolsVersion = 13.0;
+						LastSwiftMigration = 1300;
 					};
 				};
 			};
@@ -144,6 +229,7 @@
 			projectRoot = "";
 			targets = (
 				640A63A127986D2A00B343A0 /* PokerHands */,
+				640A63C12798713D00B343A0 /* TexasPokerHands */,
 			);
 		};
 /* End PBXProject section */
@@ -155,6 +241,13 @@
 			files = (
 				640A63A627986D2A00B343A0 /* Assets.xcassets in Resources */,
 				640A63B427986D2A00B343A0 /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		640A63C02798713D00B343A0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,7 +266,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		640A63BE2798713D00B343A0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				640A63CF2798718900B343A0 /* TPHDealer.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		640A63C72798713E00B343A0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 640A63C12798713D00B343A0 /* TexasPokerHands */;
+			targetProxy = 640A63C62798713E00B343A0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		640A63B227986D2A00B343A0 /* LaunchScreen.storyboard */ = {
@@ -305,6 +414,7 @@
 		640A63B927986D2A00B343A0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_STATIC_ANALYZER_MODE = deep;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -320,8 +430,8 @@
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = armv7;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -342,6 +452,7 @@
 		640A63BA27986D2A00B343A0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_STATIC_ANALYZER_MODE = deep;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -357,8 +468,8 @@
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = armv7;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -374,6 +485,76 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,6";
 				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		640A63CB2798713E00B343A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 6LED2SAPL5;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.aya.TexasPokerHands;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		640A63CC2798713E00B343A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 6LED2SAPL5;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.aya.TexasPokerHands;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -394,6 +575,15 @@
 			buildConfigurations = (
 				640A63B927986D2A00B343A0 /* Debug */,
 				640A63BA27986D2A00B343A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		640A63CA2798713E00B343A0 /* Build configuration list for PBXNativeTarget "TexasPokerHands" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				640A63CB2798713E00B343A0 /* Debug */,
+				640A63CC2798713E00B343A0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
