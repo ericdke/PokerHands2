@@ -10,6 +10,8 @@ import TexasPokerHands
 
 struct SPHMainView: View {
     
+    @ObservedObject var model = SPHDemoModel()
+    
     @State var player1Name: String = ""
     @State var player2Name: String = ""
     @State var numberOfRoundsLabel: String = "" {
@@ -92,6 +94,9 @@ struct SPHMainView: View {
                 .padding()
             }
             .padding()
+            .onAppear {
+                model.playOneHandAllIn()
+            }
         }
     }
 }

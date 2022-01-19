@@ -18,6 +18,22 @@
 		640A63C82798713E00B343A0 /* TexasPokerHands.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 640A63C22798713D00B343A0 /* TexasPokerHands.framework */; };
 		640A63C92798713E00B343A0 /* TexasPokerHands.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 640A63C22798713D00B343A0 /* TexasPokerHands.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		640A63CF2798718900B343A0 /* TPHDealer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640A63CE2798718900B343A0 /* TPHDealer.swift */; };
+		640A63D12798781300B343A0 /* TPHConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640A63D02798781300B343A0 /* TPHConstants.swift */; };
+		640A63D3279878BF00B343A0 /* TPHCardsDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640A63D2279878BF00B343A0 /* TPHCardsDeck.swift */; };
+		640A63D52798792E00B343A0 /* TPHHandRank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640A63D42798792E00B343A0 /* TPHHandRank.swift */; };
+		640A63DA2798797300B343A0 /* uniqueToRanks_bytes.json in Resources */ = {isa = PBXBuildFile; fileRef = 640A63D62798797300B343A0 /* uniqueToRanks_bytes.json */; };
+		640A63DB2798797300B343A0 /* flushes_bytes.json in Resources */ = {isa = PBXBuildFile; fileRef = 640A63D72798797300B343A0 /* flushes_bytes.json */; };
+		640A63DC2798797300B343A0 /* primeProductToCombination_bytes.json in Resources */ = {isa = PBXBuildFile; fileRef = 640A63D82798797300B343A0 /* primeProductToCombination_bytes.json */; };
+		640A63DD2798797300B343A0 /* combinationToRank_bytes.json in Resources */ = {isa = PBXBuildFile; fileRef = 640A63D92798797300B343A0 /* combinationToRank_bytes.json */; };
+		640A63DF2798799100B343A0 /* TPHByteRanks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640A63DE2798799100B343A0 /* TPHByteRanks.swift */; };
+		640A63E127987A3900B343A0 /* TPHEvaluator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640A63E027987A3900B343A0 /* TPHEvaluator.swift */; };
+		640A63E327988D7800B343A0 /* TPHModelDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640A63E227988D7800B343A0 /* TPHModelDeck.swift */; };
+		640A63E527988DB800B343A0 /* TPHCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640A63E427988DB800B343A0 /* TPHCard.swift */; };
+		640A63E727989D6E00B343A0 /* TPHPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640A63E627989D6E00B343A0 /* TPHPlayer.swift */; };
+		640A63E927989E0F00B343A0 /* EXT+Sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640A63E827989E0F00B343A0 /* EXT+Sequence.swift */; };
+		640A63EB27989E4700B343A0 /* TPHTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640A63EA27989E4700B343A0 /* TPHTable.swift */; };
+		640A63F12798A1E100B343A0 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 640A63F02798A1E100B343A0 /* Algorithms */; };
+		640A63F32798A3BA00B343A0 /* SPHDemoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640A63F22798A3BA00B343A0 /* SPHDemoModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +73,21 @@
 		640A63C22798713D00B343A0 /* TexasPokerHands.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TexasPokerHands.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		640A63C42798713E00B343A0 /* TexasPokerHands.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TexasPokerHands.h; sourceTree = "<group>"; };
 		640A63CE2798718900B343A0 /* TPHDealer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPHDealer.swift; sourceTree = "<group>"; };
+		640A63D02798781300B343A0 /* TPHConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPHConstants.swift; sourceTree = "<group>"; };
+		640A63D2279878BF00B343A0 /* TPHCardsDeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPHCardsDeck.swift; sourceTree = "<group>"; };
+		640A63D42798792E00B343A0 /* TPHHandRank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPHHandRank.swift; sourceTree = "<group>"; };
+		640A63D62798797300B343A0 /* uniqueToRanks_bytes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = uniqueToRanks_bytes.json; sourceTree = "<group>"; };
+		640A63D72798797300B343A0 /* flushes_bytes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = flushes_bytes.json; sourceTree = "<group>"; };
+		640A63D82798797300B343A0 /* primeProductToCombination_bytes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = primeProductToCombination_bytes.json; sourceTree = "<group>"; };
+		640A63D92798797300B343A0 /* combinationToRank_bytes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = combinationToRank_bytes.json; sourceTree = "<group>"; };
+		640A63DE2798799100B343A0 /* TPHByteRanks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPHByteRanks.swift; sourceTree = "<group>"; };
+		640A63E027987A3900B343A0 /* TPHEvaluator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPHEvaluator.swift; sourceTree = "<group>"; };
+		640A63E227988D7800B343A0 /* TPHModelDeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPHModelDeck.swift; sourceTree = "<group>"; };
+		640A63E427988DB800B343A0 /* TPHCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPHCard.swift; sourceTree = "<group>"; };
+		640A63E627989D6E00B343A0 /* TPHPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPHPlayer.swift; sourceTree = "<group>"; };
+		640A63E827989E0F00B343A0 /* EXT+Sequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EXT+Sequence.swift"; sourceTree = "<group>"; };
+		640A63EA27989E4700B343A0 /* TPHTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPHTable.swift; sourceTree = "<group>"; };
+		640A63F22798A3BA00B343A0 /* SPHDemoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPHDemoModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				640A63F12798A1E100B343A0 /* Algorithms in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +116,7 @@
 				640A63A427986D2A00B343A0 /* PokerHands */,
 				640A63C32798713E00B343A0 /* TexasPokerHands */,
 				640A63A327986D2A00B343A0 /* Products */,
+				640A63EF2798A1E100B343A0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,6 +145,7 @@
 			children = (
 				640A63A827986D2A00B343A0 /* Application */,
 				640A63AF27986D2A00B343A0 /* Main */,
+				640A63F42798A5A200B343A0 /* Source of truth */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -139,9 +173,38 @@
 			isa = PBXGroup;
 			children = (
 				640A63C42798713E00B343A0 /* TexasPokerHands.h */,
+				640A63D92798797300B343A0 /* combinationToRank_bytes.json */,
+				640A63D72798797300B343A0 /* flushes_bytes.json */,
+				640A63D82798797300B343A0 /* primeProductToCombination_bytes.json */,
+				640A63D62798797300B343A0 /* uniqueToRanks_bytes.json */,
+				640A63E827989E0F00B343A0 /* EXT+Sequence.swift */,
 				640A63CE2798718900B343A0 /* TPHDealer.swift */,
+				640A63D02798781300B343A0 /* TPHConstants.swift */,
+				640A63D2279878BF00B343A0 /* TPHCardsDeck.swift */,
+				640A63D42798792E00B343A0 /* TPHHandRank.swift */,
+				640A63DE2798799100B343A0 /* TPHByteRanks.swift */,
+				640A63E027987A3900B343A0 /* TPHEvaluator.swift */,
+				640A63E227988D7800B343A0 /* TPHModelDeck.swift */,
+				640A63E427988DB800B343A0 /* TPHCard.swift */,
+				640A63E627989D6E00B343A0 /* TPHPlayer.swift */,
+				640A63EA27989E4700B343A0 /* TPHTable.swift */,
 			);
 			path = TexasPokerHands;
+			sourceTree = "<group>";
+		};
+		640A63EF2798A1E100B343A0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		640A63F42798A5A200B343A0 /* Source of truth */ = {
+			isa = PBXGroup;
+			children = (
+				640A63F22798A3BA00B343A0 /* SPHDemoModel.swift */,
+			);
+			path = "Source of truth";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,6 +236,8 @@
 				640A63C72798713E00B343A0 /* PBXTargetDependency */,
 			);
 			name = PokerHands;
+			packageProductDependencies = (
+			);
 			productName = PokerHands;
 			productReference = 640A63A227986D2A00B343A0 /* PokerHands.app */;
 			productType = "com.apple.product-type.application";
@@ -191,6 +256,9 @@
 			dependencies = (
 			);
 			name = TexasPokerHands;
+			packageProductDependencies = (
+				640A63F02798A1E100B343A0 /* Algorithms */,
+			);
 			productName = TexasPokerHands;
 			productReference = 640A63C22798713D00B343A0 /* TexasPokerHands.framework */;
 			productType = "com.apple.product-type.framework";
@@ -224,6 +292,9 @@
 				Base,
 			);
 			mainGroup = 640A639927986D2A00B343A0;
+			packageReferences = (
+				640A63EC2798A1A000B343A0 /* XCRemoteSwiftPackageReference "swift-algorithms" */,
+			);
 			productRefGroup = 640A63A327986D2A00B343A0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -248,6 +319,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				640A63DD2798797300B343A0 /* combinationToRank_bytes.json in Resources */,
+				640A63DB2798797300B343A0 /* flushes_bytes.json in Resources */,
+				640A63DC2798797300B343A0 /* primeProductToCombination_bytes.json in Resources */,
+				640A63DA2798797300B343A0 /* uniqueToRanks_bytes.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +335,7 @@
 			files = (
 				640A63AE27986D2A00B343A0 /* SPHSceneDelegate+NSToolbar.swift in Sources */,
 				640A63B127986D2A00B343A0 /* SPHMainViewController.swift in Sources */,
+				640A63F32798A3BA00B343A0 /* SPHDemoModel.swift in Sources */,
 				640A63AA27986D2A00B343A0 /* SPHAppDelegate.swift in Sources */,
 				640A63BC27986F0A00B343A0 /* SPHMainView.swift in Sources */,
 				640A63AC27986D2A00B343A0 /* SPHSceneDelegate.swift in Sources */,
@@ -270,7 +346,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				640A63D3279878BF00B343A0 /* TPHCardsDeck.swift in Sources */,
+				640A63E727989D6E00B343A0 /* TPHPlayer.swift in Sources */,
+				640A63D12798781300B343A0 /* TPHConstants.swift in Sources */,
+				640A63E127987A3900B343A0 /* TPHEvaluator.swift in Sources */,
+				640A63DF2798799100B343A0 /* TPHByteRanks.swift in Sources */,
+				640A63E327988D7800B343A0 /* TPHModelDeck.swift in Sources */,
 				640A63CF2798718900B343A0 /* TPHDealer.swift in Sources */,
+				640A63E527988DB800B343A0 /* TPHCard.swift in Sources */,
+				640A63EB27989E4700B343A0 /* TPHTable.swift in Sources */,
+				640A63E927989E0F00B343A0 /* EXT+Sequence.swift in Sources */,
+				640A63D52798792E00B343A0 /* TPHHandRank.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -589,6 +675,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		640A63EC2798A1A000B343A0 /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-algorithms.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		640A63F02798A1E100B343A0 /* Algorithms */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 640A63EC2798A1A000B343A0 /* XCRemoteSwiftPackageReference "swift-algorithms" */;
+			productName = Algorithms;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 640A639A27986D2A00B343A0 /* Project object */;
 }
