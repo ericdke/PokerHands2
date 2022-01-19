@@ -7,7 +7,7 @@
 
 import Foundation
 
-class TPHHandRank: Equatable {
+public class TPHHandRank: Equatable {
     
     let rank: Int
     let name: TPHConstants.RankName
@@ -20,10 +20,10 @@ class TPHHandRank: Equatable {
     
 }
 
-func == (lhs: TPHHandRank, rhs: TPHHandRank) -> Bool {
+public func == (lhs: TPHHandRank, rhs: TPHHandRank) -> Bool {
     return lhs.rank == rhs.rank
 }
 
-func < (lhs: TPHHandRank, rhs: TPHHandRank) -> Bool {
+public func < (lhs: TPHHandRank, rhs: TPHHandRank) -> Bool {
     return lhs.rank < rhs.rank
 }

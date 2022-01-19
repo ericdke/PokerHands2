@@ -14,7 +14,7 @@ public class TPHDealer {
 
     var currentDeck: TPHModelDeck
 
-    var table: TPHTable
+    public var table: TPHTable
 
     var verbose = false
 
@@ -60,11 +60,11 @@ public class TPHDealer {
 
     public var currentHandWinner: TPHPlayer? {
         didSet {
-            if currentHandWinner != nil {
-                if scores[currentHandWinner!.name!] == nil {
-                    scores[currentHandWinner!.name!] = 1
+            if let ch = currentHandWinner {
+                if scores[ch.id] == nil {
+                    scores[ch.id] = 1
                 } else {
-                    scores[currentHandWinner!.name!]! += 1
+                    scores[ch.id]! += 1
                 }
             } else {
                 scores = [:]
@@ -72,7 +72,7 @@ public class TPHDealer {
         }
     }
 
-    var scores = [String:Int]()
+    var scores = [UUID: Int]()
 
     func changeDeck() {
         currentDeck = TPHModelDeck()
@@ -148,11 +148,11 @@ public class TPHDealer {
         return dealTurn()
     }
 
-    private func burn() -> TPHCard? {
+    func burn() -> TPHCard? {
         return currentDeck.takeCards(number: 1).first
     }
 
-    private func dealWithBurning(number: Int) -> [TPHCard] {
+    func dealWithBurning(number: Int) -> [TPHCard] {
         guard let burned = burn() else {
             return []
         }
@@ -164,24 +164,19 @@ public class TPHDealer {
         player.hand = evaluateHandAtRiver(player: player)
     }
 
-    func evaluateHandAtRiver(player: TPHPlayer) -> (TPHHandRank, [String]) {
+    func evaluateHandAtRiver(player: TPHPlayer) -> TPHHand {
         let sevenCards = table.dealtCards + player.cards
         let cardsReps = sevenCards.map({ $0.description })
         // all 5 cards combinations from the 7 cards
         let perms = cardsReps.permutations(ofCount: 5)
-        // TODO: do the permutations with rank/else instead of literal cards descriptions
         let sortedPerms = perms.map({ $0.sorted(by: <) })
-        let uniqs = Array(Set(sortedPerms))
-        var handsResult = [(TPHHandRank, [String])]()
-        for hand in uniqs {
+        var handsResult = [TPHHand]()
+        for hand in Set(sortedPerms) {
             let h = evaluator.evaluate(cards: hand)
-            handsResult.append(
-                (h, hand)
-            )
+            handsResult.append(TPHHand(rank: h, cards: hand))
         }
-        handsResult.sort(by: { $0.0 < $1.0 })
-        let bestHand = handsResult.first
-        return bestHand!
+        handsResult.sort(by: { $0.rank < $1.rank })
+        return handsResult.first!
     }
 
     public func updateHeadsUpWinner(player1: TPHPlayer, player2: TPHPlayer) {
@@ -189,9 +184,9 @@ public class TPHDealer {
     }
 
     func findHeadsUpWinner(player1: TPHPlayer, player2: TPHPlayer) -> TPHPlayer {
-        if player1.hand!.0 < player2.hand!.0 {
+        if player1.hand!.rank < player2.hand!.rank {
             return player1 }
-        else if player1.hand!.0 == player2.hand!.0 {
+        else if player1.hand!.rank == player2.hand!.rank {
             return TPHPlayer(name: "SPLIT") }
         else {
             return player2

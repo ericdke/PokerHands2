@@ -8,6 +8,8 @@
 import Foundation
 
 public class TPHPlayer {
+    
+    let id = UUID()
 
     public init(name: String? = nil) {
         self.name = name ?? ""
@@ -15,30 +17,30 @@ public class TPHPlayer {
     
     var name: String?
 
-    var historyOfDealtCards = [(TPHCard, TPHCard, Date)]()
+    var historyOfDealtCards = [TPHPocketCard]()
     
     var frequentHands = [String:Int]()
 
-    var hand: (TPHHandRank, [String])?
+    var hand: TPHHand?
     
     var handDescription: String? {
-        return hand?.1.joined(separator: " ")
+        return hand?.cards.joined(separator: " ")
     }
     
     var handNameDescription: String? {
-        return hand?.0.name.rawValue.lowercased()
+        return hand?.rank.name.rawValue.lowercased()
     }
 
     var cardsHistory: String {
-        let mapped = historyOfDealtCards.map { $0.0.description + " " + $0.1.description }
+        let mapped = historyOfDealtCards.map { $0.card1.description + " " + $0.card2.description }
         return mapped.joined(separator: ", ")
     }
 
     var cards = [TPHCard]() {
         didSet {
-            let tu = (cards[0], cards[1], Date())
+            let tu = TPHPocketCard(card1: cards[0], card2: cards[1], date: Date())
             historyOfDealtCards.append(tu)
-            let fqname = "\(tu.0.description),\(tu.1.description)"
+            let fqname = "\(tu.card1.description),\(tu.card2.description)"
             if frequentHands[fqname] == nil {
                 frequentHands[fqname] = 1
             } else {
@@ -60,14 +62,14 @@ public class TPHPlayer {
     }
     
     var lastDealtHandReadableDate: String? {
-        guard let date = historyOfDealtCards.last?.2 else { return nil }
+        guard let date = historyOfDealtCards.last?.date else { return nil }
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy/MM/dd HH:mm:ss:SSS"
         return formatter.string(from: date)
     }
     
     var lastDealtHandDate: Date? {
-        return historyOfDealtCards.last?.2
+        return historyOfDealtCards.last?.date
     }
     
 }

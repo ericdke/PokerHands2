@@ -34,6 +34,8 @@
 		640A63EB27989E4700B343A0 /* TPHTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640A63EA27989E4700B343A0 /* TPHTable.swift */; };
 		640A63F12798A1E100B343A0 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 640A63F02798A1E100B343A0 /* Algorithms */; };
 		640A63F32798A3BA00B343A0 /* SPHDemoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640A63F22798A3BA00B343A0 /* SPHDemoModel.swift */; };
+		640A63F62798AEB100B343A0 /* TPHPocketCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640A63F52798AEB100B343A0 /* TPHPocketCard.swift */; };
+		640A63F82798AF6B00B343A0 /* TPHHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640A63F72798AF6B00B343A0 /* TPHHand.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +90,8 @@
 		640A63E827989E0F00B343A0 /* EXT+Sequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EXT+Sequence.swift"; sourceTree = "<group>"; };
 		640A63EA27989E4700B343A0 /* TPHTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPHTable.swift; sourceTree = "<group>"; };
 		640A63F22798A3BA00B343A0 /* SPHDemoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPHDemoModel.swift; sourceTree = "<group>"; };
+		640A63F52798AEB100B343A0 /* TPHPocketCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPHPocketCard.swift; sourceTree = "<group>"; };
+		640A63F72798AF6B00B343A0 /* TPHHand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPHHand.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +190,8 @@
 				640A63E027987A3900B343A0 /* TPHEvaluator.swift */,
 				640A63E227988D7800B343A0 /* TPHModelDeck.swift */,
 				640A63E427988DB800B343A0 /* TPHCard.swift */,
+				640A63F72798AF6B00B343A0 /* TPHHand.swift */,
+				640A63F52798AEB100B343A0 /* TPHPocketCard.swift */,
 				640A63E627989D6E00B343A0 /* TPHPlayer.swift */,
 				640A63EA27989E4700B343A0 /* TPHTable.swift */,
 			);
@@ -352,9 +358,11 @@
 				640A63E127987A3900B343A0 /* TPHEvaluator.swift in Sources */,
 				640A63DF2798799100B343A0 /* TPHByteRanks.swift in Sources */,
 				640A63E327988D7800B343A0 /* TPHModelDeck.swift in Sources */,
+				640A63F62798AEB100B343A0 /* TPHPocketCard.swift in Sources */,
 				640A63CF2798718900B343A0 /* TPHDealer.swift in Sources */,
 				640A63E527988DB800B343A0 /* TPHCard.swift in Sources */,
 				640A63EB27989E4700B343A0 /* TPHTable.swift in Sources */,
+				640A63F82798AF6B00B343A0 /* TPHHand.swift in Sources */,
 				640A63E927989E0F00B343A0 /* EXT+Sequence.swift in Sources */,
 				640A63D52798792E00B343A0 /* TPHHandRank.swift in Sources */,
 			);
@@ -528,6 +536,7 @@
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
 				SWIFT_VERSION = 5.0;
@@ -566,6 +575,7 @@
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
 				SWIFT_VERSION = 5.0;
@@ -600,10 +610,12 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -635,9 +647,11 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";

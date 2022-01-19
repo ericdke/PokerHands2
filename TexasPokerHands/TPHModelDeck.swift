@@ -33,7 +33,7 @@ public class TPHModelDeck {
         }
         var c = [TPHCard]()
         for _ in 1...number {
-            let index = Int.random(in: 0...self.count)
+            let index = Int.random(in: 0...self.count - 1)
             c.append(cards[index])
             cards.remove(at: index)
         }

@@ -28,6 +28,7 @@ final class SPHDemoModel: ObservableObject {
         dealer.updateHeadsUpWinner(player1: p1, player2: p2)
         
 
+        print(dealer.table.currentGame)
         dump(dealer.currentHandWinner)
     }
     
