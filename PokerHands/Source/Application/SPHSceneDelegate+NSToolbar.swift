@@ -14,7 +14,7 @@ import AppKit
 extension SPHSceneDelegate: NSToolbarDelegate {
     
 	func toolbarItems() -> [NSToolbarItem.Identifier] {
-		return [.toggleSidebar]
+		return [] // [.toggleSidebar]
 	}
 	
 	func toolbarAllowedItemIdentifiers(_ toolbar: NSToolbar) -> [NSToolbarItem.Identifier] {
