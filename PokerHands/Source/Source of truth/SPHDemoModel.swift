@@ -11,8 +11,6 @@ import TexasPokerHands
 
 final class SPHDemoModel: ObservableObject {
     
-    let dealer = TPHDealer()!
-
     @Published var results: [TPHHeadsUpResult] = []
     
     @Published var player1Name: String = ""

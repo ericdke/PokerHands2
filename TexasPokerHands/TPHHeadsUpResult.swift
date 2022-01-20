@@ -8,155 +8,132 @@
 import Foundation
 
 public struct TPHHeadsUpResult {
+
+    public let winnerName: String
+    public let winnerHoleCards: String
+    public let winnerHandDescription: String
+    public let opponentName: String
+    public let opponentHoleCards: String
+    public let opponentHandDescription: String
+    public let winners: (p1: Bool, p2: Bool)
     
-    public let p1: TPHPlayer
-    public let p2: TPHPlayer
-    public let dealer: TPHDealer
-    
-    public init(player1: TPHPlayer, player2: TPHPlayer, dealer: TPHDealer) {
-        p1 = player1
-        p2 = player2
-        self.dealer = dealer
-    }
-    
-    public var winnerName: String {
+    public init(player1 p1: TPHPlayer, player2 p2: TPHPlayer, dealer: TPHDealer) {
         if dealer.currentHandWinner.isEmpty {
-            return "[no winner]"
-        }
-        if dealer.currentHandWinner.count > 1 {
-            return "[split]"
+            winnerName = "[no winner]"
+        } else if dealer.currentHandWinner.count > 1 {
+            winnerName = "[split]"
         } else {
-            return dealer.currentHandWinner[0].nameSafe
+            winnerName = dealer.currentHandWinner[0].nameSafe
         }
-    }
-    
-    public var winnerHoleCards: String {
+        
         if dealer.currentHandWinner.isEmpty {
-            return "[empty]"
-        }
-        if dealer.currentHandWinner.count > 1 {
-            return "\(p1.nameSafe): \(p1.holeCards) \(p2.nameSafe): \(p2.holeCards)"
+            winnerHoleCards = "[empty]"
+        } else if dealer.currentHandWinner.count > 1 {
+            winnerHoleCards = "\(p1.nameSafe): \(p1.holeCards) \(p2.nameSafe): \(p2.holeCards)"
         } else {
-            return dealer.currentHandWinner[0].holeCards
+            winnerHoleCards = dealer.currentHandWinner[0].holeCards
         }
-    }
-    
-    public var winnerHandDescription: String {
+        
         if dealer.currentHandWinner.isEmpty {
-            return "[empty]"
-        }
-        if dealer.currentHandWinner.count > 1 {
+            winnerHandDescription = "[empty]"
+        } else if dealer.currentHandWinner.count > 1 {
             if let p1h = p1.handDescription,
                 let p2h = p2.handDescription
             {
                 if let p1n = p1.handNameDescription,
                     let p2n = p2.handNameDescription
                 {
-                    return "\(p1.nameSafe): \(p1h) \(p1n) \(p2.nameSafe): \(p2h) \(p2n)"
+                    winnerHandDescription = "\(p1.nameSafe): \(p1h) \(p1n) \(p2.nameSafe): \(p2h) \(p2n)"
                 } else {
-                    return "\(p1.nameSafe): \(p1h) \(p2.nameSafe): \(p2h)"
+                    winnerHandDescription = "\(p1.nameSafe): \(p1h) \(p2.nameSafe): \(p2h)"
                 }
             } else {
-                return "[not available]"
+                winnerHandDescription = "[not available]"
             }
         } else {
             if let wh = dealer.currentHandWinner[0].handDescription {
                 if let wn = dealer.currentHandWinner[0].handNameDescription {
-                    return "\(wh) \(wn)"
+                    winnerHandDescription = "\(wh) \(wn)"
                 } else {
-                    return wh
+                    winnerHandDescription = wh
                 }
             } else {
-                return "[not available]"
+                winnerHandDescription = "[not available]"
             }
         }
-    }
-    
-    public var opponentName: String {
+        
         if dealer.currentHandWinner.isEmpty {
-            return "[no opponent]"
-        }
-        if dealer.currentHandWinner.count > 1 {
-            return "[split]"
+            opponentName = "[no opponent]"
+        } else if dealer.currentHandWinner.count > 1 {
+            opponentName = "[split]"
         } else {
             if dealer.currentHandWinner[0].id == p1.id {
-                return p2.nameSafe
+                opponentName = p2.nameSafe
             } else {
-                return p1.nameSafe
+                opponentName = p1.nameSafe
             }
         }
-    }
-    
-    public var opponentHoleCards: String {
+        
         if dealer.currentHandWinner.isEmpty {
-            return "[no opponent]"
-        }
-        if dealer.currentHandWinner.count > 1 {
-            return "\(p1.nameSafe): \(p1.holeCards) \(p2.nameSafe): \(p2.holeCards)"
+            opponentHoleCards = "[no opponent]"
+        } else if dealer.currentHandWinner.count > 1 {
+            opponentHoleCards = "\(p1.nameSafe): \(p1.holeCards) \(p2.nameSafe): \(p2.holeCards)"
         } else {
             if dealer.currentHandWinner[0].id == p1.id {
-                return p2.holeCards
+                opponentHoleCards = p2.holeCards
             } else {
-                return p1.holeCards
+                opponentHoleCards = p1.holeCards
             }
         }
-    }
-    
-    public var opponentHandDescription: String {
+        
         if dealer.currentHandWinner.isEmpty {
-            return "[no opponent]"
-        }
-        if dealer.currentHandWinner.count > 1 {
+            opponentHandDescription = "[no opponent]"
+        } else if dealer.currentHandWinner.count > 1 {
             if let p1h = p1.handDescription,
                 let p2h = p2.handDescription
             {
                 if let p1n = p1.handNameDescription,
                     let p2n = p2.handNameDescription
                 {
-                    return "\(p1.nameSafe): \(p1h) \(p1n) \(p2.nameSafe): \(p2h) \(p2n)"
+                    opponentHandDescription = "\(p1.nameSafe): \(p1h) \(p1n) \(p2.nameSafe): \(p2h) \(p2n)"
                 } else {
-                    return "\(p1.nameSafe): \(p1h) \(p2.nameSafe): \(p2h)"
+                    opponentHandDescription = "\(p1.nameSafe): \(p1h) \(p2.nameSafe): \(p2h)"
                 }
             } else {
-                return "[not available]"
+                opponentHandDescription = "[not available]"
             }
         } else {
             if dealer.currentHandWinner[0].id == p1.id {
                 if let ph = p2.handDescription {
                     if let p2n = p2.handNameDescription {
-                        return "\(ph) \(p2n)"
+                        opponentHandDescription = "\(ph) \(p2n)"
                     } else {
-                        return ph
+                        opponentHandDescription = ph
                     }
                 } else {
-                    return "[not available]"
+                    opponentHandDescription = "[not available]"
                 }
             } else {
                 if let ph = p1.handDescription {
                     if let p1n = p1.handNameDescription {
-                        return "\(ph) \(p1n)"
+                        opponentHandDescription = "\(ph) \(p1n)"
                     } else {
-                        return ph
+                        opponentHandDescription = ph
                     }
                 } else {
-                    return "[not available]"
+                    opponentHandDescription = "[not available]"
                 }
             }
         }
-    }
-    
-    public var winners: (p1: Bool, p2: Bool) {
+        
         if dealer.currentHandWinner.isEmpty {
-            return (p1: false, p2: false)
-        }
-        if dealer.currentHandWinner.count > 1 {
-            return (p1: true, p2: true)
-        }
-        if dealer.currentHandWinner[0].id == p1.id {
-            return (p1: true, p2: false)
+            winners = (p1: false, p2: false)
+        } else if dealer.currentHandWinner.count > 1 {
+            winners = (p1: true, p2: true)
+        } else if dealer.currentHandWinner[0].id == p1.id {
+            winners = (p1: true, p2: false)
         } else {
-            return (p1: false, p2: true)
+            winners = (p1: false, p2: true)
         }
     }
-    
 }
