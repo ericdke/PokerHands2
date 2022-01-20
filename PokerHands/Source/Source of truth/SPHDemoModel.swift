@@ -35,23 +35,43 @@ final class SPHDemoModel: ObservableObject {
         player2Name.isEmpty ? "Johnny" : player2Name
     }
     
-    func playOneHandAllIn() -> TPHHeadsUpResult {
-        let p1 = TPHPlayer(name: p1name)
-        let p2 = TPHPlayer(name: p2name)
-        
+    @Published var results: [TPHHeadsUpResult] = []
+    
+    
+    private func playOneHandAllIn(player1 p1: TPHPlayer, player2 p2: TPHPlayer) -> TPHHeadsUpResult {
         dealer.dealHand(to: p1)
         dealer.dealHand(to: p2)
-        
         _ = dealer.dealFlop()
         _ = dealer.dealTurn()
         _ = dealer.dealRiver()
-        
         dealer.evaluateHandAtRiver(for: p1)
         dealer.evaluateHandAtRiver(for: p2)
-        
         dealer.updateHeadsUpWinner(player1: p1, player2: p2)
-        
         return TPHHeadsUpResult(player1: p1, player2: p2, dealer: dealer)
+    }
+    
+    func playHandsAllIn(player1 p1: TPHPlayer, player2 p2: TPHPlayer, number n: Int? = nil) {
+        results = []
+        let number = n ?? numberOfRounds
+        if dealer.currentDeck.count != dealer.currentDeck.capacity {
+            dealer.reset()
+        }
+        for _ in 1...number {
+            let res = playOneHandAllIn(player1: p1, player2: p2)
+            results.append(res)
+            switch res.winners {
+            case (true, false):
+                player1Score += 1
+            case (false, true):
+                player2Score += 1
+            case (true, true):
+                player1Score += 1
+                player2Score += 1
+            case (false, false):
+                break
+            }
+            dealer.reset()
+        }
     }
     
 }

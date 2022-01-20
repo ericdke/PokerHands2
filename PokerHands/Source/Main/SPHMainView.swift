@@ -30,9 +30,6 @@ struct SPHMainView: View {
             }
             .environmentObject(model)
             .padding()
-            .onAppear {
-                _ = model.playOneHandAllIn()
-            }
         }
     }
 }

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import TexasPokerHands
 
 struct SPHSidebar: View {
     
@@ -37,7 +38,7 @@ struct SPHSidebar: View {
                     TextField("100", text: $model.numberOfRoundsLabel)
                     
                     Button("Go") {
-                        // do it
+                        model.playHandsAllIn(player1: TPHPlayer(name: model.player1Name), player2: TPHPlayer(name: model.player2Name), number: 10)
                     }
                     .background(Color.green)
                 }

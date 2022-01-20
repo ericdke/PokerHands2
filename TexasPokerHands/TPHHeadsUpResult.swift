@@ -145,4 +145,18 @@ public struct TPHHeadsUpResult {
         }
     }
     
+    public var winners: (p1: Bool, p2: Bool) {
+        if dealer.currentHandWinner.isEmpty {
+            return (p1: false, p2: false)
+        }
+        if dealer.currentHandWinner.count > 1 {
+            return (p1: true, p2: true)
+        }
+        if dealer.currentHandWinner[0].id == p1.id {
+            return (p1: true, p2: false)
+        } else {
+            return (p1: false, p2: true)
+        }
+    }
+    
 }

@@ -29,6 +29,7 @@ public class TPHModelDeck {
         cards.shuffle()
     }
     
+    // The dealer takes random cards from the ordered stack. Another option, closer to reality, would have been to shuffle the stack then to take cards from the top. You can still shuffle at any time if you want to prevent tempering or collisions.
     public func takeCards(number: Int) -> [TPHCard] {
         guard self.count >= number else {
             return []
