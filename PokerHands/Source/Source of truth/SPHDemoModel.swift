@@ -59,8 +59,8 @@ final class SPHDemoModel: ObservableObject {
             DispatchQueue.concurrentPerform(iterations: self.numberOfRounds, execute: { (index) -> Void in
                 // We recreate objects to avoid thread issues. You don't need to do that if your game executes entirely on the main thread.
                 let dd = TPHDealer(evaluator: ev)
-                let pp1 = TPHPlayer(name: p1.nameSafe)
-                let pp2 = TPHPlayer(name: p2.nameSafe)
+                let pp1 = TPHPlayer(name: p1.name)
+                let pp2 = TPHPlayer(name: p2.name)
                 self.playOneHandAllIn(player1: pp1, player2: pp2, dealer: dd) { res in
                     DispatchQueue.main.async {
                         self.results.append(res)

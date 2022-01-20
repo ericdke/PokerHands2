@@ -21,12 +21,8 @@ struct SPHMainView: View {
                 
                 // ---
                 
-                VStack {
-                    Text("TODO list view of played hands")
-                    
-                    
-                }
-                .padding()
+                SPHEventsView(proxy: proxy)
+
             }
             .environmentObject(model)
             .padding()

@@ -38,7 +38,8 @@ struct SPHSidebar: View {
                     TextField("10", text: $model.numberOfRoundsLabel)
                     
                     Button("Go") {
-                        model.playHandsAllIn(player1: TPHPlayer(name: model.player1Name), player2: TPHPlayer(name: model.player2Name))
+                        model.playHandsAllIn(player1: TPHPlayer(name: model.player1Name.isEmpty ? "Annette" : model.player1Name),
+                                             player2: TPHPlayer(name: model.player2Name.isEmpty ? "Johnny" : model.player2Name))
                     }
                     .background(Color.green)
                     .disabled(!model.gameIsEnabled)

@@ -12,14 +12,10 @@ public class TPHPlayer {
     public let id = UUID()
 
     public init(name: String? = nil) {
-        self.name = name ?? ""
+        self.name = name ?? "[anonymous]"
     }
     
-    public var name: String?
-    
-    public var nameSafe: String {
-        name ?? "[anonymous]"
-    }
+    public var name: String
 
     public var historyOfDealtCards = [TPHPocketCard]()
     

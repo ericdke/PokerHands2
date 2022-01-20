@@ -7,13 +7,16 @@
 
 import Foundation
 
-public struct TPHHeadsUpResult {
+public struct TPHHeadsUpResult: Identifiable {
 
+    public let id = UUID()
     public let winnerName: String
     public let winnerHoleCards: String
+    public let winnerHandName: String
     public let winnerHandDescription: String
     public let opponentName: String
     public let opponentHoleCards: String
+    public let opponentHandName: String
     public let opponentHandDescription: String
     public let winners: (p1: Bool, p2: Bool)
     public let winnerHoleCardsFileNames: [String]
@@ -27,18 +30,19 @@ public struct TPHHeadsUpResult {
         } else if dealer.currentHandWinner.count > 1 {
             winnerName = "[split]"
         } else {
-            winnerName = dealer.currentHandWinner[0].nameSafe
+            winnerName = dealer.currentHandWinner[0].name
         }
         
         if dealer.currentHandWinner.isEmpty {
             winnerHoleCards = "[empty]"
         } else if dealer.currentHandWinner.count > 1 {
-            winnerHoleCards = "\(p1.nameSafe): \(p1.holeCards) \(p2.nameSafe): \(p2.holeCards)"
+            winnerHoleCards = "\(p1.name): \(p1.holeCards) \(p2.name): \(p2.holeCards)"
         } else {
             winnerHoleCards = dealer.currentHandWinner[0].holeCards
         }
         
         if dealer.currentHandWinner.isEmpty {
+            winnerHandName = "[not available]"
             winnerHandDescription = "[empty]"
         } else if dealer.currentHandWinner.count > 1 {
             if let p1h = p1.handDescription,
@@ -47,21 +51,27 @@ public struct TPHHeadsUpResult {
                 if let p1n = p1.handNameDescription,
                     let p2n = p2.handNameDescription
                 {
-                    winnerHandDescription = "\(p1.nameSafe): \(p1h) \(p1n) \(p2.nameSafe): \(p2h) \(p2n)"
+                    winnerHandName = p1n
+                    winnerHandDescription = "\(p1.name): \(p1h) \(p1n) \(p2.name): \(p2h) \(p2n)"
                 } else {
-                    winnerHandDescription = "\(p1.nameSafe): \(p1h) \(p2.nameSafe): \(p2h)"
+                    winnerHandName = "[not available]"
+                    winnerHandDescription = "\(p1.name): \(p1h) \(p2.name): \(p2h)"
                 }
             } else {
+                winnerHandName = "[not available]"
                 winnerHandDescription = "[not available]"
             }
         } else {
             if let wh = dealer.currentHandWinner[0].handDescription {
                 if let wn = dealer.currentHandWinner[0].handNameDescription {
+                    winnerHandName = wn
                     winnerHandDescription = "\(wh) \(wn)"
                 } else {
+                    winnerHandName = "[not available]"
                     winnerHandDescription = wh
                 }
             } else {
+                winnerHandName = "[not available]"
                 winnerHandDescription = "[not available]"
             }
         }
@@ -72,16 +82,16 @@ public struct TPHHeadsUpResult {
             opponentName = "[split]"
         } else {
             if dealer.currentHandWinner[0].id == p1.id {
-                opponentName = p2.nameSafe
+                opponentName = p2.name
             } else {
-                opponentName = p1.nameSafe
+                opponentName = p1.name
             }
         }
         
         if dealer.currentHandWinner.isEmpty {
             opponentHoleCards = "[no opponent]"
         } else if dealer.currentHandWinner.count > 1 {
-            opponentHoleCards = "\(p1.nameSafe): \(p1.holeCards) \(p2.nameSafe): \(p2.holeCards)"
+            opponentHoleCards = "\(p1.name): \(p1.holeCards) \(p2.name): \(p2.holeCards)"
         } else {
             if dealer.currentHandWinner[0].id == p1.id {
                 opponentHoleCards = p2.holeCards
@@ -91,6 +101,7 @@ public struct TPHHeadsUpResult {
         }
         
         if dealer.currentHandWinner.isEmpty {
+            opponentHandName = "[not available]"
             opponentHandDescription = "[no opponent]"
         } else if dealer.currentHandWinner.count > 1 {
             if let p1h = p1.handDescription,
@@ -99,32 +110,41 @@ public struct TPHHeadsUpResult {
                 if let p1n = p1.handNameDescription,
                     let p2n = p2.handNameDescription
                 {
-                    opponentHandDescription = "\(p1.nameSafe): \(p1h) \(p1n) \(p2.nameSafe): \(p2h) \(p2n)"
+                    opponentHandName = p2n
+                    opponentHandDescription = "\(p1.name): \(p1h) \(p1n) \(p2.name): \(p2h) \(p2n)"
                 } else {
-                    opponentHandDescription = "\(p1.nameSafe): \(p1h) \(p2.nameSafe): \(p2h)"
+                    opponentHandName = "[not available]"
+                    opponentHandDescription = "\(p1.name): \(p1h) \(p2.name): \(p2h)"
                 }
             } else {
+                opponentHandName = "[not available]"
                 opponentHandDescription = "[not available]"
             }
         } else {
             if dealer.currentHandWinner[0].id == p1.id {
                 if let ph = p2.handDescription {
                     if let p2n = p2.handNameDescription {
+                        opponentHandName = p2n
                         opponentHandDescription = "\(ph) \(p2n)"
                     } else {
+                        opponentHandName = "[not available]"
                         opponentHandDescription = ph
                     }
                 } else {
+                    opponentHandName = "[not available]"
                     opponentHandDescription = "[not available]"
                 }
             } else {
                 if let ph = p1.handDescription {
                     if let p1n = p1.handNameDescription {
+                        opponentHandName = p1n
                         opponentHandDescription = "\(ph) \(p1n)"
                     } else {
+                        opponentHandName = "[not available]"
                         opponentHandDescription = ph
                     }
                 } else {
+                    opponentHandName = "[not available]"
                     opponentHandDescription = "[not available]"
                 }
             }

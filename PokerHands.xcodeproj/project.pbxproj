@@ -40,6 +40,7 @@
 		640A64012798C34900B343A0 /* TexasPokerHands.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 640A63C22798713D00B343A0 /* TexasPokerHands.framework */; };
 		640A64082798F3D000B343A0 /* SPHSidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640A64072798F3D000B343A0 /* SPHSidebar.swift */; };
 		640A640A2799C84F00B343A0 /* TPHHeadsUpResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640A64092799C84F00B343A0 /* TPHHeadsUpResult.swift */; };
+		640A640C279A14E700B343A0 /* SPHEventsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640A640B279A14E700B343A0 /* SPHEventsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,7 @@
 		640A63FF2798C34900B343A0 /* TexasPokerHandsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TexasPokerHandsTests.swift; sourceTree = "<group>"; };
 		640A64072798F3D000B343A0 /* SPHSidebar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPHSidebar.swift; sourceTree = "<group>"; };
 		640A64092799C84F00B343A0 /* TPHHeadsUpResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPHHeadsUpResult.swift; sourceTree = "<group>"; };
+		640A640B279A14E700B343A0 /* SPHEventsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPHEventsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +197,7 @@
 				640A63B027986D2A00B343A0 /* SPHMainViewController.swift */,
 				640A63BB27986F0A00B343A0 /* SPHMainView.swift */,
 				640A64072798F3D000B343A0 /* SPHSidebar.swift */,
+				640A640B279A14E700B343A0 /* SPHEventsView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -404,6 +407,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				640A63AE27986D2A00B343A0 /* SPHSceneDelegate+NSToolbar.swift in Sources */,
+				640A640C279A14E700B343A0 /* SPHEventsView.swift in Sources */,
 				640A64082798F3D000B343A0 /* SPHSidebar.swift in Sources */,
 				640A63B127986D2A00B343A0 /* SPHMainViewController.swift in Sources */,
 				640A63F32798A3BA00B343A0 /* SPHDemoModel.swift in Sources */,
