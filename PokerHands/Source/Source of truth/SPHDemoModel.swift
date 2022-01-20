@@ -21,12 +21,23 @@ final class SPHDemoModel: ObservableObject {
     @Published var numberOfRounds: Int = 10
     @Published var numberOfRoundsLabel: String = "" {
         didSet {
-            numberOfRounds = Int(numberOfRoundsLabel) ?? 10
+            if let n = Int(numberOfRoundsLabel) {
+                if n < 1 {
+                    gameIsEnabled = false
+                } else {
+                    gameIsEnabled = true
+                    numberOfRounds = n
+                }
+            } else {
+                gameIsEnabled = false
+            }
         }
     }
 
     @Published var player1Score: Int = 0
     @Published var player2Score: Int = 0
+
+    @Published var gameIsEnabled = true
     
     var p1name: String {
         player1Name.isEmpty ? "Annette" : player1Name.localizedCapitalized
@@ -48,15 +59,14 @@ final class SPHDemoModel: ObservableObject {
         completion(TPHHeadsUpResult(player1: p1, player2: p2, dealer: dealer))
     }
     
-    func playHandsAllIn(player1 p1: TPHPlayer, player2 p2: TPHPlayer, number n: Int? = nil) {
+    func playHandsAllIn(player1 p1: TPHPlayer, player2 p2: TPHPlayer) {
         results = []
         player1Score = 0
         player2Score = 0
-        let number = n ?? numberOfRounds
         let ev = TPHEvaluator()!
         
         DispatchQueue.global(qos: .userInteractive).async {
-            DispatchQueue.concurrentPerform(iterations: number, execute: { (index) -> Void in
+            DispatchQueue.concurrentPerform(iterations: self.numberOfRounds, execute: { (index) -> Void in
                 // We recreate objects to avoid thread issues. You don't need to do that if your game executes entirely on the main thread.
                 let dd = TPHDealer(evaluator: ev)
                 let pp1 = TPHPlayer(name: p1.nameSafe)

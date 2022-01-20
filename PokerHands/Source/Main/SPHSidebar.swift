@@ -41,6 +41,7 @@ struct SPHSidebar: View {
                         model.playHandsAllIn(player1: TPHPlayer(name: model.player1Name), player2: TPHPlayer(name: model.player2Name))
                     }
                     .background(Color.green)
+                    .disabled(!model.gameIsEnabled)
                 }
             }
             .padding()
