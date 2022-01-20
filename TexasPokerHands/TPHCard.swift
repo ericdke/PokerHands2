@@ -65,6 +65,6 @@ public struct TPHCard: Equatable {
     
 }
 
-public func ==(lhs: TPHCard, rhs: TPHCard) -> Bool {
+public func == (lhs: TPHCard, rhs: TPHCard) -> Bool {
     return lhs.rank == rhs.rank && lhs.suit == rhs.suit
 }

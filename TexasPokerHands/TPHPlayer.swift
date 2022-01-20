@@ -32,15 +32,15 @@ public class TPHPlayer {
     }
 
     public var cardsHistory: String {
-        let mapped = historyOfDealtCards.map { $0.card1.description + " " + $0.card2.description }
+        let mapped = historyOfDealtCards.map { "\($0.card1.description) \($0.card2.description)" }
         return mapped.joined(separator: ", ")
     }
 
     public var cards = [TPHCard]() {
         didSet {
-            let tu = TPHPocketCard(card1: cards[0], card2: cards[1], date: Date())
-            historyOfDealtCards.append(tu)
-            let fqname = "\(tu.card1.description),\(tu.card2.description)"
+            let pc = TPHPocketCard(card1: cards[0], card2: cards[1], date: Date())
+            historyOfDealtCards.append(pc)
+            let fqname = "\(pc.card1.description),\(pc.card2.description)"
             if frequentHands[fqname] == nil {
                 frequentHands[fqname] = 1
             } else {

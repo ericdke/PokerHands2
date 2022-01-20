@@ -57,24 +57,23 @@ public class TPHDealer {
 
     public var river: String { return table.river }
 
-    public var currentHandWinner: TPHPlayer? {
+    public var currentHandWinner: [TPHPlayer] = [] {
         didSet {
-            if let ch = currentHandWinner {
+            for ch in currentHandWinner {
                 if scores[ch.id] == nil {
                     scores[ch.id] = 1
                 } else {
                     scores[ch.id]! += 1
                 }
-            } else {
-                scores = [:]
             }
         }
     }
 
     var scores = [UUID: Int]()
 
-    public func changeDeck() {
+    public func reset() {
         currentDeck = TPHModelDeck()
+        table = TPHTable()
     }
 
     public func shuffleDeck() {
@@ -182,13 +181,13 @@ public class TPHDealer {
         currentHandWinner = findHeadsUpWinner(player1: player1, player2: player2)
     }
 
-    func findHeadsUpWinner(player1: TPHPlayer, player2: TPHPlayer) -> TPHPlayer {
+    func findHeadsUpWinner(player1: TPHPlayer, player2: TPHPlayer) -> [TPHPlayer] {
         if player1.hand!.rank < player2.hand!.rank {
-            return player1 }
+            return [player1] }
         else if player1.hand!.rank == player2.hand!.rank {
-            return TPHPlayer(name: "SPLIT") }
+            return [player1, player2] }
         else {
-            return player2
+            return [player2]
         }
     }
     

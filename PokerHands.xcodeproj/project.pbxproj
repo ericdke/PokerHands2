@@ -36,10 +36,19 @@
 		640A63F32798A3BA00B343A0 /* SPHDemoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640A63F22798A3BA00B343A0 /* SPHDemoModel.swift */; };
 		640A63F62798AEB100B343A0 /* TPHPocketCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640A63F52798AEB100B343A0 /* TPHPocketCard.swift */; };
 		640A63F82798AF6B00B343A0 /* TPHHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640A63F72798AF6B00B343A0 /* TPHHand.swift */; };
+		640A64002798C34900B343A0 /* TexasPokerHandsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640A63FF2798C34900B343A0 /* TexasPokerHandsTests.swift */; };
+		640A64012798C34900B343A0 /* TexasPokerHands.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 640A63C22798713D00B343A0 /* TexasPokerHands.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		640A63C62798713E00B343A0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 640A639A27986D2A00B343A0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 640A63C12798713D00B343A0;
+			remoteInfo = TexasPokerHands;
+		};
+		640A64022798C34900B343A0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 640A639A27986D2A00B343A0 /* Project object */;
 			proxyType = 1;
@@ -92,6 +101,8 @@
 		640A63F22798A3BA00B343A0 /* SPHDemoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPHDemoModel.swift; sourceTree = "<group>"; };
 		640A63F52798AEB100B343A0 /* TPHPocketCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPHPocketCard.swift; sourceTree = "<group>"; };
 		640A63F72798AF6B00B343A0 /* TPHHand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPHHand.swift; sourceTree = "<group>"; };
+		640A63FD2798C34900B343A0 /* TexasPokerHandsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TexasPokerHandsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		640A63FF2798C34900B343A0 /* TexasPokerHandsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TexasPokerHandsTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +122,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		640A63FA2798C34900B343A0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				640A64012798C34900B343A0 /* TexasPokerHands.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -119,6 +138,7 @@
 			children = (
 				640A63A427986D2A00B343A0 /* PokerHands */,
 				640A63C32798713E00B343A0 /* TexasPokerHands */,
+				640A63FE2798C34900B343A0 /* TexasPokerHandsTests */,
 				640A63A327986D2A00B343A0 /* Products */,
 				640A63EF2798A1E100B343A0 /* Frameworks */,
 			);
@@ -129,6 +149,7 @@
 			children = (
 				640A63A227986D2A00B343A0 /* PokerHands.app */,
 				640A63C22798713D00B343A0 /* TexasPokerHands.framework */,
+				640A63FD2798C34900B343A0 /* TexasPokerHandsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -213,6 +234,14 @@
 			path = "Source of truth";
 			sourceTree = "<group>";
 		};
+		640A63FE2798C34900B343A0 /* TexasPokerHandsTests */ = {
+			isa = PBXGroup;
+			children = (
+				640A63FF2798C34900B343A0 /* TexasPokerHandsTests.swift */,
+			);
+			path = TexasPokerHandsTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -269,6 +298,24 @@
 			productReference = 640A63C22798713D00B343A0 /* TexasPokerHands.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		640A63FC2798C34900B343A0 /* TexasPokerHandsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 640A64042798C34900B343A0 /* Build configuration list for PBXNativeTarget "TexasPokerHandsTests" */;
+			buildPhases = (
+				640A63F92798C34900B343A0 /* Sources */,
+				640A63FA2798C34900B343A0 /* Frameworks */,
+				640A63FB2798C34900B343A0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				640A64032798C34900B343A0 /* PBXTargetDependency */,
+			);
+			name = TexasPokerHandsTests;
+			productName = TexasPokerHandsTests;
+			productReference = 640A63FD2798C34900B343A0 /* TexasPokerHandsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -286,6 +333,9 @@
 					640A63C12798713D00B343A0 = {
 						CreatedOnToolsVersion = 13.0;
 						LastSwiftMigration = 1300;
+					};
+					640A63FC2798C34900B343A0 = {
+						CreatedOnToolsVersion = 13.0;
 					};
 				};
 			};
@@ -307,6 +357,7 @@
 			targets = (
 				640A63A127986D2A00B343A0 /* PokerHands */,
 				640A63C12798713D00B343A0 /* TexasPokerHands */,
+				640A63FC2798C34900B343A0 /* TexasPokerHandsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -329,6 +380,13 @@
 				640A63DB2798797300B343A0 /* flushes_bytes.json in Resources */,
 				640A63DC2798797300B343A0 /* primeProductToCombination_bytes.json in Resources */,
 				640A63DA2798797300B343A0 /* uniqueToRanks_bytes.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		640A63FB2798C34900B343A0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,6 +426,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		640A63F92798C34900B343A0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				640A64002798C34900B343A0 /* TexasPokerHandsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -375,6 +441,11 @@
 			isa = PBXTargetDependency;
 			target = 640A63C12798713D00B343A0 /* TexasPokerHands */;
 			targetProxy = 640A63C62798713E00B343A0 /* PBXContainerItemProxy */;
+		};
+		640A64032798C34900B343A0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 640A63C12798713D00B343A0 /* TexasPokerHands */;
+			targetProxy = 640A64022798C34900B343A0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -658,6 +729,53 @@
 			};
 			name = Release;
 		};
+		640A64052798C34900B343A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6LED2SAPL5;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.aya.TexasPokerHandsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		640A64062798C34900B343A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6LED2SAPL5;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.aya.TexasPokerHandsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -684,6 +802,15 @@
 			buildConfigurations = (
 				640A63CB2798713E00B343A0 /* Debug */,
 				640A63CC2798713E00B343A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		640A64042798C34900B343A0 /* Build configuration list for PBXNativeTarget "TexasPokerHandsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				640A64052798C34900B343A0 /* Debug */,
+				640A64062798C34900B343A0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

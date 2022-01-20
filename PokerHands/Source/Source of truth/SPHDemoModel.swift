@@ -11,6 +11,8 @@ final class SPHDemoModel: ObservableObject {
     
     let dealer = TPHDealer()!
     
+    
+    
     func playOneHandAllIn() {
         let p1 = TPHPlayer(name: "Jesus")
         let p2 = TPHPlayer(name: "Paul")
