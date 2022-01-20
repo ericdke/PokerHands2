@@ -10,10 +10,12 @@ import UIKit
 import SwiftUI
 
 final class SPHMainViewController: UIViewController {
+    
+    let model = SPHDemoModel()
 
     init() {
         super.init(nibName: nil, bundle: nil)
-        title = "PokerHands"
+        title = "TexasPokerHands"
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -22,7 +24,8 @@ final class SPHMainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let childView = UIHostingController(rootView: SPHMainView())
+        let v = SPHMainView()
+        let childView = UIHostingController(rootView: v.environmentObject(model))
         addChild(childView)
         childView.view.frame = view.bounds
         view.addConstrained(subview: childView.view)

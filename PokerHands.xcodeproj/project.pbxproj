@@ -38,6 +38,8 @@
 		640A63F82798AF6B00B343A0 /* TPHHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640A63F72798AF6B00B343A0 /* TPHHand.swift */; };
 		640A64002798C34900B343A0 /* TexasPokerHandsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640A63FF2798C34900B343A0 /* TexasPokerHandsTests.swift */; };
 		640A64012798C34900B343A0 /* TexasPokerHands.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 640A63C22798713D00B343A0 /* TexasPokerHands.framework */; };
+		640A64082798F3D000B343A0 /* SPHSidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640A64072798F3D000B343A0 /* SPHSidebar.swift */; };
+		640A640A2799C84F00B343A0 /* TPHHeadsUpResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640A64092799C84F00B343A0 /* TPHHeadsUpResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +105,8 @@
 		640A63F72798AF6B00B343A0 /* TPHHand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPHHand.swift; sourceTree = "<group>"; };
 		640A63FD2798C34900B343A0 /* TexasPokerHandsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TexasPokerHandsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		640A63FF2798C34900B343A0 /* TexasPokerHandsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TexasPokerHandsTests.swift; sourceTree = "<group>"; };
+		640A64072798F3D000B343A0 /* SPHSidebar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPHSidebar.swift; sourceTree = "<group>"; };
+		640A64092799C84F00B343A0 /* TPHHeadsUpResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPHHeadsUpResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +194,7 @@
 			children = (
 				640A63B027986D2A00B343A0 /* SPHMainViewController.swift */,
 				640A63BB27986F0A00B343A0 /* SPHMainView.swift */,
+				640A64072798F3D000B343A0 /* SPHSidebar.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -215,6 +220,7 @@
 				640A63F52798AEB100B343A0 /* TPHPocketCard.swift */,
 				640A63E627989D6E00B343A0 /* TPHPlayer.swift */,
 				640A63EA27989E4700B343A0 /* TPHTable.swift */,
+				640A64092799C84F00B343A0 /* TPHHeadsUpResult.swift */,
 			);
 			path = TexasPokerHands;
 			sourceTree = "<group>";
@@ -398,6 +404,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				640A63AE27986D2A00B343A0 /* SPHSceneDelegate+NSToolbar.swift in Sources */,
+				640A64082798F3D000B343A0 /* SPHSidebar.swift in Sources */,
 				640A63B127986D2A00B343A0 /* SPHMainViewController.swift in Sources */,
 				640A63F32798A3BA00B343A0 /* SPHDemoModel.swift in Sources */,
 				640A63AA27986D2A00B343A0 /* SPHAppDelegate.swift in Sources */,
@@ -410,6 +417,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				640A640A2799C84F00B343A0 /* TPHHeadsUpResult.swift in Sources */,
 				640A63D3279878BF00B343A0 /* TPHCardsDeck.swift in Sources */,
 				640A63E727989D6E00B343A0 /* TPHPlayer.swift in Sources */,
 				640A63D12798781300B343A0 /* TPHConstants.swift in Sources */,

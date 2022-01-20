@@ -11,11 +11,33 @@ final class SPHDemoModel: ObservableObject {
     
     let dealer = TPHDealer()!
     
+    @Published var player1Name: String = ""
     
+    @Published var player2Name: String = ""
     
-    func playOneHandAllIn() {
-        let p1 = TPHPlayer(name: "Jesus")
-        let p2 = TPHPlayer(name: "Paul")
+    @Published var numberOfRoundsLabel: String = "" {
+        didSet {
+            numberOfRounds = Int(numberOfRoundsLabel) ?? 100
+        }
+    }
+    
+    @Published var numberOfRounds: Int = 100
+    
+    @Published var player1Score: Int = 0
+    
+    @Published var player2Score: Int = 0
+    
+    var p1name: String {
+        player1Name.isEmpty ? "Annette" : player1Name
+    }
+    
+    var p2name: String {
+        player2Name.isEmpty ? "Johnny" : player2Name
+    }
+    
+    func playOneHandAllIn() -> TPHHeadsUpResult {
+        let p1 = TPHPlayer(name: p1name)
+        let p2 = TPHPlayer(name: p2name)
         
         dealer.dealHand(to: p1)
         dealer.dealHand(to: p2)
@@ -29,9 +51,7 @@ final class SPHDemoModel: ObservableObject {
         
         dealer.updateHeadsUpWinner(player1: p1, player2: p2)
         
-
-        print(dealer.table.currentGame)
-        dump(dealer.currentHandWinner)
+        return TPHHeadsUpResult(player1: p1, player2: p2, dealer: dealer)
     }
     
 }

@@ -16,6 +16,10 @@ public class TPHPlayer {
     }
     
     public var name: String?
+    
+    public var nameSafe: String {
+        name ?? "[anonymous]"
+    }
 
     public var historyOfDealtCards = [TPHPocketCard]()
     

@@ -21,7 +21,8 @@ class SPHSceneDelegate: UIResponder, UIWindowSceneDelegate {
 			window.rootViewController = SPHMainViewController()
 			
 #if targetEnvironment(macCatalyst)
-			
+            windowScene.sizeRestrictions?.minimumSize = CGSize(width: 800, height: 640)
+            
 			let toolbar = NSToolbar(identifier: NSToolbar.Identifier("SPHSceneDelegate.Toolbar"))
 			toolbar.delegate = self
 			toolbar.displayMode = .iconOnly
@@ -29,6 +30,8 @@ class SPHSceneDelegate: UIResponder, UIWindowSceneDelegate {
 			
 			windowScene.titlebar?.toolbar = toolbar
 			windowScene.titlebar?.toolbarStyle = .unified
+            
+
 			
 #endif
 			
