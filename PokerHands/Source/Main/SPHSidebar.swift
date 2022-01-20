@@ -35,10 +35,10 @@ struct SPHSidebar: View {
                 Text("Rounds")
                 
                 HStack {
-                    TextField("100", text: $model.numberOfRoundsLabel)
+                    TextField("10", text: $model.numberOfRoundsLabel)
                     
                     Button("Go") {
-                        model.playHandsAllIn(player1: TPHPlayer(name: model.player1Name), player2: TPHPlayer(name: model.player2Name), number: 10)
+                        model.playHandsAllIn(player1: TPHPlayer(name: model.player1Name), player2: TPHPlayer(name: model.player2Name))
                     }
                     .background(Color.green)
                 }
