@@ -55,7 +55,7 @@ struct SPHSidebar: View {
             
             VStack {
                 VStack {
-                    Text(model.p1name)
+                    Text(model.player1Name.isEmpty ? "Annette" : model.player1Name.localizedCapitalized)
                         .fontWeight(.heavy)
                         .multilineTextAlignment(.leading)
                         .lineLimit(2)
@@ -68,7 +68,7 @@ struct SPHSidebar: View {
                 .background(Color.blue)
 
                 VStack {
-                    Text(model.p2name)
+                    Text(model.player2Name.isEmpty ? "Johhny" : model.player2Name.localizedCapitalized)
                         .fontWeight(.heavy)
                         .multilineTextAlignment(.leading)
                         .lineLimit(2)

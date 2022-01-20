@@ -16,6 +16,8 @@ public struct TPHHeadsUpResult {
     public let opponentHoleCards: String
     public let opponentHandDescription: String
     public let winners: (p1: Bool, p2: Bool)
+    public let winnerHoleCardsFileNames: [String]
+    public let opponentHoleCardsFileNames: [String]
     
     public init(player1 p1: TPHPlayer, player2 p2: TPHPlayer, dealer: TPHDealer) {
         if dealer.currentHandWinner.isEmpty {
@@ -134,6 +136,20 @@ public struct TPHHeadsUpResult {
             winners = (p1: true, p2: false)
         } else {
             winners = (p1: false, p2: true)
+        }
+        
+        if dealer.currentHandWinner.isEmpty {
+            winnerHoleCardsFileNames = []
+            opponentHoleCardsFileNames = []
+        } else if dealer.currentHandWinner.count > 1 {
+            winnerHoleCardsFileNames = p1.cards.map { $0.fileName }
+            opponentHoleCardsFileNames = p2.cards.map { $0.fileName }
+        } else if dealer.currentHandWinner[0].id == p1.id {
+            winnerHoleCardsFileNames = p1.cards.map { $0.fileName }
+            opponentHoleCardsFileNames = p2.cards.map { $0.fileName }
+        } else {
+            winnerHoleCardsFileNames = p2.cards.map { $0.fileName }
+            opponentHoleCardsFileNames = p1.cards.map { $0.fileName }
         }
     }
 }

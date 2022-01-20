@@ -36,14 +36,6 @@ final class SPHDemoModel: ObservableObject {
     @Published var player2Score: Int = 0
 
     @Published var gameIsEnabled = true
-    
-    var p1name: String {
-        player1Name.isEmpty ? "Annette" : player1Name.localizedCapitalized
-    }
-    
-    var p2name: String {
-        player2Name.isEmpty ? "Johnny" : player2Name.localizedCapitalized
-    }
 
     private func playOneHandAllIn(player1 p1: TPHPlayer, player2 p2: TPHPlayer, dealer: TPHDealer, completion: @escaping (TPHHeadsUpResult)->()) {
         dealer.dealHand(to: p1)
