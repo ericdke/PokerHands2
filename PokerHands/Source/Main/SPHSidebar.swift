@@ -45,11 +45,10 @@ struct SPHSidebar: View {
                 }
             }
             .padding()
-            .background(Color.purple)
             
-            VStack {
-                // random or custom cards
-            }
+//            VStack {
+//                // random or custom cards
+//            }
             
             Spacer()
             
