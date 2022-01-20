@@ -16,12 +16,13 @@ class SPHSceneDelegate: UIResponder, UIWindowSceneDelegate {
 			fatalError("Expected scene of type UIWindowScene but got an unexpected type")
 		}
 		window = UIWindow(windowScene: windowScene)
-		
+
 		if let window = window {
 			window.rootViewController = SPHMainViewController()
+            window.overrideUserInterfaceStyle = .dark
 			
 #if targetEnvironment(macCatalyst)
-            windowScene.sizeRestrictions?.minimumSize = CGSize(width: 800, height: 640)
+            windowScene.sizeRestrictions?.minimumSize = CGSize(width: 960, height: 640)
             
 			let toolbar = NSToolbar(identifier: NSToolbar.Identifier("SPHSceneDelegate.Toolbar"))
 			toolbar.delegate = self

@@ -5,6 +5,7 @@
 //  Created by Eric Dejonckheere on 19/01/2022.
 //
 
+import SwiftUI
 import TexasPokerHands
 
 // A simple demo. You don't have to use TPH like this - use and modify as you see fit.

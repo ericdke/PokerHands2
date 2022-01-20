@@ -10,19 +10,17 @@ import SwiftUI
 struct SPHMainView: View {
     
     @EnvironmentObject var model: SPHDemoModel
-    @State var width: CGFloat = 220
+
+    var width: CGFloat {
+        200
+    }
     
     var body: some View {
         GeometryReader { proxy in
             HStack {
-                
                 SPHSidebar(width: width)
-                    
-                
-                // ---
-                
-                SPHEventsView(proxy: proxy)
 
+                SPHEventsView(proxy: proxy)
             }
             .environmentObject(model)
             .padding()

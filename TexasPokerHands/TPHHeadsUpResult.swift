@@ -45,17 +45,15 @@ public struct TPHHeadsUpResult: Identifiable {
             winnerHandName = "[not available]"
             winnerHandDescription = "[empty]"
         } else if dealer.currentHandWinner.count > 1 {
-            if let p1h = p1.handDescription,
-                let p2h = p2.handDescription
+            if let p1h = p1.handDescription
             {
-                if let p1n = p1.handNameDescription,
-                    let p2n = p2.handNameDescription
+                if let p1n = p1.handNameDescription
                 {
                     winnerHandName = p1n
-                    winnerHandDescription = "\(p1.name): \(p1h) \(p1n) \(p2.name): \(p2h) \(p2n)"
+                    winnerHandDescription = p1h
                 } else {
                     winnerHandName = "[not available]"
-                    winnerHandDescription = "\(p1.name): \(p1h) \(p2.name): \(p2h)"
+                    winnerHandDescription = p1h
                 }
             } else {
                 winnerHandName = "[not available]"
@@ -65,7 +63,7 @@ public struct TPHHeadsUpResult: Identifiable {
             if let wh = dealer.currentHandWinner[0].handDescription {
                 if let wn = dealer.currentHandWinner[0].handNameDescription {
                     winnerHandName = wn
-                    winnerHandDescription = "\(wh) \(wn)"
+                    winnerHandDescription = wh
                 } else {
                     winnerHandName = "[not available]"
                     winnerHandDescription = wh
@@ -104,17 +102,15 @@ public struct TPHHeadsUpResult: Identifiable {
             opponentHandName = "[not available]"
             opponentHandDescription = "[no opponent]"
         } else if dealer.currentHandWinner.count > 1 {
-            if let p1h = p1.handDescription,
-                let p2h = p2.handDescription
+            if let p2h = p2.handDescription
             {
-                if let p1n = p1.handNameDescription,
-                    let p2n = p2.handNameDescription
+                if let p2n = p2.handNameDescription
                 {
                     opponentHandName = p2n
-                    opponentHandDescription = "\(p1.name): \(p1h) \(p1n) \(p2.name): \(p2h) \(p2n)"
+                    opponentHandDescription = p2h
                 } else {
                     opponentHandName = "[not available]"
-                    opponentHandDescription = "\(p1.name): \(p1h) \(p2.name): \(p2h)"
+                    opponentHandDescription = p2h
                 }
             } else {
                 opponentHandName = "[not available]"
@@ -125,7 +121,7 @@ public struct TPHHeadsUpResult: Identifiable {
                 if let ph = p2.handDescription {
                     if let p2n = p2.handNameDescription {
                         opponentHandName = p2n
-                        opponentHandDescription = "\(ph) \(p2n)"
+                        opponentHandDescription = ph
                     } else {
                         opponentHandName = "[not available]"
                         opponentHandDescription = ph
@@ -138,7 +134,7 @@ public struct TPHHeadsUpResult: Identifiable {
                 if let ph = p1.handDescription {
                     if let p1n = p1.handNameDescription {
                         opponentHandName = p1n
-                        opponentHandDescription = "\(ph) \(p1n)"
+                        opponentHandDescription = ph
                     } else {
                         opponentHandName = "[not available]"
                         opponentHandDescription = ph

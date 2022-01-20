@@ -58,9 +58,10 @@ public struct TPHCard: Equatable {
         }
     }
     
-    var fileName: String {
+    // Works with Xcode Assets and SwiftUI. You might have to add the filename extension for other systems.
+    public var fileName: String {
         let temp = name.replacingOccurrences(of: " ", with: "_").lowercased()
-        return "\(temp)_w.png"
+        return "\(temp)_w"
     }
     
 }

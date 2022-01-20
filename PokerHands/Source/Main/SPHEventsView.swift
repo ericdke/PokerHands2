@@ -13,20 +13,75 @@ struct SPHEventsView: View {
     @EnvironmentObject var model: SPHDemoModel
     var proxy: GeometryProxy
     
+    var cardWidth: CGFloat {
+        proxy.size.width * 0.055
+    }
+    
     var body: some View {
         ScrollView {
             List {
                 ForEach(model.results) { result in
                     HStack {
-                        Text(result.winnerName)
-                        Text(result.winnerHoleCards)
-                        Text(result.winnerHandName)
+                        VStack {
+                            HStack {
+                                ForEach(result.winnerHoleCardsFileNames, id: \.self) { fn in
+                                    Image(fn)
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: cardWidth)
+                                }
+                            }
+                            
+                            Text(result.winnerName)
+                            Text("")
+                                .hidden()
+                        }
+                        
+                        Spacer()
+                        
+                        VStack {
+                            HStack {
+                                ForEach(result.tableCardsFileNames, id: \.self) { fn in
+                                    Image(fn)
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: cardWidth)
+                                }
+                            }
+                            
+                            Text("\(result.winnerName) wins with \(result.winnerHandName)")
+                            Text(result.winnerHandDescription)
+                        }
+                        
+                        Spacer()
+                        
+                        VStack {
+                            HStack {
+                                ForEach(result.opponentHoleCardsFileNames, id: \.self) { fn in
+                                    Image(fn)
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: cardWidth)
+                                }
+                            }
+                            
+                            Text(result.opponentName)
+                            Text("")
+                                .hidden()
+                        }
                     }
                     .font(.system(.body, design: .monospaced))
+                    .padding(.vertical)
                 }
             }
-            .frame(height: proxy.size.height)
+            .frame(height: proxy.size.height - 30)
+            
+            if !model.results.isEmpty {
+                Spacer()
+            }
         }
+        .padding(.horizontal)
+        .opacity(model.results.isEmpty ? 0 : 1)
     }
 }
 
