@@ -24,9 +24,11 @@ A list of a all-in heads-up simulator. Two players, with random cards, go all-in
 
 ## Credits
 
-Original cards images are from [Playing Cards iOS Assets](https://github.com/hayeah/playing-cards-assets).
+Cards images are from [Playing Cards iOS Assets](https://github.com/hayeah/playing-cards-assets).
 
-The 2-cards and 5-cards hand ranking algorithms are adapted from [swift-poker-hand-evaluator](https://github.com/s4nchez/swift-poker-hand-evaluator).
+Some hand ranking algorithms are adapted from [swift-poker-hand-evaluator](https://github.com/s4nchez/swift-poker-hand-evaluator).
+
+Mac Catalyst template by [Steven Troughton-Smith](https://github.com/steventroughtonsmith/catalyst-xctemplates).
 
 
 ## License
