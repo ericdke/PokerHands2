@@ -18,9 +18,13 @@ Mixing several techniques in Swift to evaluate a Texas Holdem poker hand.
 
 - Reorder and extract results
 
+## Why this new version?
+
+I wanted to fix the bugs and improve the speed, but also change the way many objects were modelized, and have a new demo, and... Well, starting a new project made more sense to me rather than updating [the other one](https://github.com/ericdke/PokerHands).
+
 ## Demo app
 
-A list of a all-in heads-up simulator. Two players, with random cards, go all-in each round.
+A SwiftUI demo of a all-in heads-up simulator.
 
 ## Credits
 
