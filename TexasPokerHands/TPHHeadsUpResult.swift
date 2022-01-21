@@ -10,6 +10,13 @@ import Foundation
 public struct TPHHeadsUpResult: Identifiable {
 
     public let id = UUID()
+    public let player1: TPHPlayer
+    public let player2: TPHPlayer
+    
+    // Two players win in case of split pot
+    public let winnerIds: [UUID]
+    
+    // Convenience parsing - might want to refactor as methods or lazy vars instead
     public let winnerName: String
     public let winnerHoleCards: String
     public let winnerHandName: String
@@ -25,10 +32,15 @@ public struct TPHHeadsUpResult: Identifiable {
     public let tableCardsFileNames: [String]
     
     public init(player1 p1: TPHPlayer, player2 p2: TPHPlayer, dealer: TPHDealer) {
+        player1 = p1
+        player2 = p2
+        
+        winnerIds = dealer.currentHandWinner.compactMap { $0.id }
+        
         if dealer.currentHandWinner.isEmpty {
             winnerName = "[no winner]"
         } else if dealer.currentHandWinner.count > 1 {
-            winnerName = "[split]"
+            winnerName = "\(p1.name) and \(p2.name)"
         } else {
             winnerName = dealer.currentHandWinner[0].name
         }
@@ -77,7 +89,7 @@ public struct TPHHeadsUpResult: Identifiable {
         if dealer.currentHandWinner.isEmpty {
             opponentName = "[no opponent]"
         } else if dealer.currentHandWinner.count > 1 {
-            opponentName = "[split]"
+            opponentName = "\(p1.name) and \(p2.name)"
         } else {
             if dealer.currentHandWinner[0].id == p1.id {
                 opponentName = p2.name

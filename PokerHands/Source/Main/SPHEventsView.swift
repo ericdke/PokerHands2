@@ -24,7 +24,7 @@ struct SPHEventsView: View {
                     HStack {
                         VStack {
                             HStack {
-                                ForEach(result.winnerHoleCardsFileNames, id: \.self) { fn in
+                                ForEach(result.player1.cards.map({$0.fileName}), id: \.self) { fn in
                                     Image(fn)
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
@@ -32,9 +32,13 @@ struct SPHEventsView: View {
                                 }
                             }
                             
-                            Text(result.winnerName)
-                            Text("")
-                                .hidden()
+                            VStack {
+                                Text(result.player1.name)
+                                Text(result.player1.holeCards)
+                            }
+//                            .padding(.vertical, 5)
+//                            .padding(.horizontal)
+//                            .background(Color.blue)
                         }
                         
                         Spacer()
@@ -57,7 +61,7 @@ struct SPHEventsView: View {
                         
                         VStack {
                             HStack {
-                                ForEach(result.opponentHoleCardsFileNames, id: \.self) { fn in
+                                ForEach(result.player2.cards.map({$0.fileName}), id: \.self) { fn in
                                     Image(fn)
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
@@ -65,13 +69,17 @@ struct SPHEventsView: View {
                                 }
                             }
                             
-                            Text(result.opponentName)
-                            Text("")
-                                .hidden()
+                            VStack {
+                                Text(result.player2.name)
+                                Text(result.player2.holeCards)
+                            }
+//                            .padding(.vertical, 5)
+//                            .padding(.horizontal)
+//                            .background(Color.pink)
                         }
                     }
                     .font(.system(.body, design: .monospaced))
-                    .padding(.vertical)
+                    .padding([.vertical, .trailing])
                 }
             }
             .frame(height: proxy.size.height - 30)
