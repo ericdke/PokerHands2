@@ -24,7 +24,7 @@ I wanted to fix the bugs and improve the speed, but also change the way many obj
 
 ## Demo app
 
-A SwiftUI demo of a all-in heads-up simulator.
+A SwiftUI demo of an all-in heads-up simulator. An executable (macOS11) is available.
 
 ## Credits
 
