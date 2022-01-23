@@ -167,6 +167,7 @@ public class TPHDealer {
         let cardsReps = sevenCards.map({ $0.description })
         // all 5 cards combinations from the 7 cards
         let perms = cardsReps.permutations(ofCount: 5)
+        // sorting the inner groups makes everything much faster
         let sortedPerms = perms.map({ $0.sorted(by: <) })
         var handsResult = [TPHHand]()
         for hand in Set(sortedPerms) {
